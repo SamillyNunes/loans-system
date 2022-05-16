@@ -12,5 +12,6 @@ public interface ILoanController {
 	String consultarDisponibilidadeObjeto(Objeto objeto) throws ErroGeral;
 	Date definirPrazo(int dias) throws ErroPrazoInvalido;
 	String consultarDisponibilidadeReserva(Reserva reserva) throws ErroGeral;
+	Objeto buscarObjeto(String codigo) throws ErroGeral;
 	void emprestar(Objeto objeto, Contato contato) throws ErroGeral;
 }

@@ -2,13 +2,14 @@ package br.ufak.aracomp.fs.banco.controller;
 
 import java.util.Date;
 
+import br.ufal.aracomp.fs.banco.exceptions.ErroGeral;
 import br.ufal.aracomp.fs.banco.model.Contato;
 import br.ufal.aracomp.fs.banco.model.Objeto;
 import br.ufal.aracomp.fs.banco.model.Reserva;
 
 public interface ILoanController {
-	boolean consultarDisponibilidadeObjeto(Objeto objeto);
-	Date definirPrazo(int dias);
-	boolean consultarDisponibilidadeReserva(Reserva reserva);
-	void emprestar(Objeto objeto, Contato contato);
+	String consultarDisponibilidadeObjeto(Objeto objeto) throws ErroGeral;
+	Date definirPrazo(int dias) throws ErroGeral;
+	String consultarDisponibilidadeReserva(Reserva reserva) throws ErroGeral;
+	void emprestar(Objeto objeto, Contato contato) throws ErroGeral;
 }

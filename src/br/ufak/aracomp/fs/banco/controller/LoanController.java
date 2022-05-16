@@ -9,9 +9,9 @@ import br.ufal.aracomp.fs.banco.model.Reserva;
 public class LoanController implements ILoanController{
 
 	@Override
-	public boolean consultarDisponibilidadeObjeto(Objeto objeto) {
+	public String consultarDisponibilidadeObjeto(Objeto objeto) {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 	@Override
@@ -21,9 +21,9 @@ public class LoanController implements ILoanController{
 	}
 
 	@Override
-	public boolean consultarDisponibilidadeReserva(Reserva reserva) {
+	public String consultarDisponibilidadeReserva(Reserva reserva) {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 	@Override

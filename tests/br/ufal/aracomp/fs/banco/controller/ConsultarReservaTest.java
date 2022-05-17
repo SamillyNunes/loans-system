@@ -115,5 +115,30 @@ class ConsultarReservaTest {
 		assertThrows(ErroGeral.class, ()->{controller.consultarDisponibilidadeReserva(reserva);});
 	}
 	
+	/**
+	 * Verifica resultado quando o objeto da reserva é nulo
+	 */
+	@Test
+	void consultarObjetoReservaNulo() {
+		Objeto objeto = null;
+		Contato contato = new Contato("01", "jose@gmail.com", "Jose", "1111111111");
+		Reserva reserva = new Reserva("01", new Date(), "disponivel", objeto, contato);
+		
+		assertThrows(ErroGeral.class, ()->{controller.consultarDisponibilidadeReserva(reserva);});
+	}
+	
+
+	/**
+	 * Verifica resultado quando o contato da reserva é nulo
+	 */
+	@Test
+	void consultarContatoReservaNulo() {
+		Objeto objeto = new Objeto("00001", "Livro", "Livro de arq de dados", "disponivel");
+		Contato contato = null;
+		Reserva reserva = new Reserva("01", new Date(), "disponivel", objeto, contato);
+		
+		assertThrows(ErroGeral.class, ()->{controller.consultarDisponibilidadeReserva(reserva);});
+	}
+	
 
 }
